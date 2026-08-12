@@ -25,21 +25,20 @@ export const GroupMovie = ({ title }: { title: string, }) => {
     }, [title]);
 
 
-    return <div className="w-full gap-4">
-        <div className="flex justify-between" >
+    return <div className="flex flex-col gap-4 w-full">
+        <div className="flex justify-between items-center" >
 
             <p>{title}</p>
             <button onClick={Seepage}>See more</button>
         </div>
-        <div className="flex flex-wrap w-[1350px] gap-2 ">
-
-
+        <div className="grid grid-cols-5 gap-4 ">
             {movies.map((movie) => {
                 return <Moviecard key={movie.id} movie={movie} />
             })}
+
         </div>
 
-    </div>
+    </div >
 
 
 }
